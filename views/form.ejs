@@ -1,0 +1,221 @@
+<!--Author- Najeam Mehanmal 7457195-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Revolution Vending 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="js/index.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/stylesheets.css" />
+</head>
+<body></body>
+  <h1>Revolution Vending</h1>
+
+  <section class="flex-container">
+    <div class="form-data">
+      <form
+        name="my-form"
+        method="post"
+        onsubmit="return formSubmit();"
+        action=""
+      >
+        <!--Customer info-->
+        <div class="name-label">
+          <label for="name">Name</label>
+          <input name="name" type="text" id="name" placeholder="First Last" />
+        </div>
+        <div class="address-label">
+          <label for="address">Address</label>
+          <input
+            name="address"
+            type="text"
+            id="address"
+            placeholder="eg. 123 Main Street"
+          />
+        </div>
+        <div class="city-label">
+          <label for="city">City</label>
+          <input
+            name="city"
+            type="text"
+            id="city"
+            placeholder='eg. "Toronto" or "New Dundee"'
+          />
+        </div>
+
+        <div class="province-label">
+          <label>Province/Territory</label>
+          <select name="province" id="province">
+            <option value="">----- Select -----</option>
+            <option value="bc">British Columbia</option>
+            <option value="ab">Alberta</option>
+            <option value="sk">Saskatchewan</option>
+            <option value="mb">Manitoba</option>
+            <option value="on">Ontario</option>
+            <option value="qb">Quebec</option>
+            <option value="ns">Nova Scotia</option>
+            <option value="pe">Prince Edward Island</option>
+            <option value="nb">New Brunswick</option>
+            <option value="nf">Newfoundland</option>
+            <option value="yt">Yukon</option>
+            <option value="nt">Northwest Territories</option>
+            <option value="nu">Nunavut</option>
+          </select>
+        </div>
+        <div class="phone-label">
+          <label for="phone-number">Phone Number</label>
+          <input
+            name="phoneNumber"
+            type="text"
+            id="phone-number"
+            placeholder="xxxxxxxxxx"
+          />
+        </div>
+
+        <div class="email-label">
+          <label for="email">Email</label>
+          <input
+            name="email"
+            type="text"
+            id="email"
+            placeholder="email@domain.com"
+          />
+        </div>
+
+        <!-- Products for sale-->
+
+        <div class="medical-tape-label">
+          <label for="medical-tape">Medical Tape - $3</label>
+          <input
+            name="medicalTape"
+            type="text"
+            id="medical-tape"
+            placeholder="Enter quantity number"
+          />
+        </div>
+
+        <div class="chalk-label">
+          <label for="chalk">Chalk - $2</label>
+          <input
+            name="chalk"
+            type="text"
+            id="chalk"
+            placeholder="Enter quantity number"
+          />
+        </div>
+
+        <div class="gymnastic-suit-label">
+          <label>Gymnastic suit</label>
+          <select name="gymnasticSuit" id="gymnastic-suit">
+            <option value="">----- Select -----</option>
+            <option value="s">Small $2</option>
+            <option value="m">Medium $3</option>
+            <option value="l">Large $5</option>
+          </select>
+        </div>
+
+        <div class="gymnastic-grip-label">
+          <label>Grips</label>
+          <select name="gymnasticGrip" id="gymnastic-grip">
+            <option value="">----- Select -----</option>
+            <option value="s">Small $2</option>
+            <option value="m">Medium $3</option>
+            <option value="l">Large $5</option>
+          </select>
+        </div>
+
+       
+          <input id="submit" type="submit" value="Submit" />
+
+      </form>
+    </div>
+
+    <div class="formResult">
+      <% if (typeof(errors) != 'undefined') { for(let error of errors) { %>
+      <p class="errors"><%= error.msg %></p>
+      <% } } else if (typeof(name) != 'undefined' && subTotal >= 10) { %>
+      <p id="form-results"><%= `${name}'s Receipt` %></p>
+
+      <table class="user-receipt">
+        <tr>
+          <th>Name:</th>
+          <td><%= name %></td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td><%= address %></td>
+        </tr>
+        <tr>
+          <th>City:</th>
+          <td><%= city %></td>
+        </tr>
+        <tr>
+          <th>Prov/Ter</th>
+          <td><%= province %></td>
+        </tr>
+        <tr>
+          <th>Phone Number:</th>
+          <td><%= phoneNumber %></td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td><%= email %></td>
+        </tr>
+        <tr>
+          <th>City:</th>
+          <td><%= city %></td>
+        </tr>
+
+        <% if(medicalTapeCost !== 0) { %>
+        <tr>
+          <th>Medical Tape:</th>
+          <td>$<%= medicalTapeCost %></td>
+        </tr>
+        <% } %> <% if(chalkCost !== 0) { %>
+        <tr>
+          <th>Chalk:</th>
+          <td>$<%= chalkCost %></td>
+        </tr>
+        <% } %> <% if(gymnasticSuitCost !== 0) { %>
+        <tr>
+          <th>Gymnastic Suit:</th>
+          <td>$<%= gymnasticSuitCost %></td>
+        </tr>
+        <% } %> <% if( gymnasticGripCost !== 0) { %>
+        <tr>
+          <th>Gymnastic Grip:</th>
+          <td>$<%= gymnasticGripCost %></td>
+        </tr>
+        <% } %>
+        <tr>
+          <th>Sub Total:</th>
+          <td>$<%= subTotal %></td>
+        </tr>
+        <tr>
+          <th>Total Tax:</th>
+          <td>$<%= totalTax %></td>
+        </tr>
+        <tr>
+          <th>Total Amount:</th>
+          <td>$<%= totalAmount %></td>
+        </tr>
+      </table>
+
+      <% } else { %>
+      <p id="form-results"></p>
+      <table>
+        <tr>
+          <th>Minimum Subtotal purchase of $10 required to complete order</th>
+        </tr>
+      </table>
+
+      <% } %>
+    </div>
+  </section>
+<!-- 
+  <div class="clear"></div> -->
+</body>

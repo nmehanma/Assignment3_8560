@@ -1,0 +1,88 @@
+/*Author: Najeam Mehanmal 7457195 */
+
+body {
+  /* background-color: aqua; */
+  font-family: "Courier New", Courier, monospace;
+  /* font-size: 20px; */
+  width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.flex-container {
+  display: flex;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
+.flex-container > div {
+  background-color: burlywood;
+  margin: 10px;
+  padding: 20px;
+  font-size: 20px;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
+#form-results {
+  text-align: center;
+  font-size: 17px;
+  /* font-weight: bold; */
+
+}
+
+.form-data {
+  align-content: right;
+  flex-basis: 380px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.formResult {
+  flex-grow: 0;
+  flex-basis: 350px;
+  flex-shrink: 0;
+}
+
+.errors {
+  font-size: 15px;
+  text-align: left;
+}
+
+label {
+  text-align: left;
+  display: inline-block;
+  margin: 4px;
+}
+
+form > div {
+  display: flex;
+  margin: auto;
+}
+
+label,
+input,
+select {
+  display: inline-block;
+  text-align: center;
+}
+
+#city {
+  font-size: 10px;
+  width: 150px;
+  
+}
+
+input,
+select {
+  margin-left: auto;
+}
+
+/* #submit {
+ margin: center;
+} */

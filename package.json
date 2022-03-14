@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "^4.17.1",
+    "express-validator": "*",
+    "mongoose" : "*"
+
+  },
+  "name": "revolutionvending",
+  "version": "1.0.0",
+  "description": "Assignment 3 website using Node.js with Express Framework",
+  "main": "index.js",
+  "scripts": {
+    "start": " nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Revolution",
+    "Vending"
+  ],
+  "author": "Najeam Mehanmal - 7457195",
+  "license": "ISC"
+}
