@@ -11,6 +11,8 @@ body {
 h1 {
   text-align: center;
   padding-top: 40px;
+  font-weight: 400px;
+  color: red; 
 }
 
 .flex-container {
@@ -33,7 +35,6 @@ h1 {
   text-align: center;
   font-size: 17px;
   /* font-weight: bold; */
-
 }
 
 .form-data {
@@ -75,7 +76,6 @@ select {
 #city {
   font-size: 10px;
   width: 150px;
-  
 }
 
 input,
